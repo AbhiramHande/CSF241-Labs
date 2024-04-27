@@ -24,21 +24,14 @@ WRITE:
     MOV AL, CL
     ADD AX, 40h
 
-LINE:
     MOV AH, 02h
     XOR BH, BH
     INT 10h
 
-    PUSH CX
     MOV AH, 09h
     XOR BH, BH
     MOV BL, 00001010b
-    MOV CX, 01h
     INT 10h
-
-    POP CX
-    INC DL
-    LOOP LINE
 
     INC DH
     MOV CL, num1
